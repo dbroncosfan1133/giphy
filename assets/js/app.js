@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+var animalBtns = ["Panda's", "Monkey's", "Hippo's", "Dog's"]
+for(var j = 0; j < animalBtns.length; j++) {
+    var btnCreate = $("<button>" + animalBtns[j] + "</button>")
+        btnCreate.attr("type", "button");
+        btnCreate.attr("class", "btn btn-success m-1");
+        btnCreate.attr("data-animal", animalBtns[j]);
+        btnCreate.appendTo("#buttonArray")
+}
+
+
 $("button").on("click", function() {
     var animal = $(this).attr("data-animal");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -53,7 +63,7 @@ $("#searchForm").submit(function(e) {
         newBtn.attr("type", "button");
         
 
-        newBtn.append(newBtn);
+        newBtn.append(animalBtns);
 
 });
 
