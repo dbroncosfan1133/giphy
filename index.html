@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc8e8a90e9.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <title>Animal Gifs</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" id="buttonArray">
+                <button data-animal="panda" type="button" class="btn btn-success">Panda's</button>
+                <button data-animal="monkey" type="button" class="btn btn-success">Monkey's</button>
+                <button data-animal="hippopotamus" type="button" class="btn btn-success">Hippo's</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6" id="searchForm">
+                <p class="col-12 mb-1 mt-1 p-0" id="searchBar">Add an Animal</p>
+                <form action=addAnimal()>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fas fa-search"></i>   Search</button>
+                  </form>
+            </div>
+        </div>
+        <div class="col-4" id="animal-gifs-here"></div>
+    </div>
+    
+</body>
+</html>
