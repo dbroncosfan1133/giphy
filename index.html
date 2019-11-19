@@ -27,15 +27,15 @@
         </div>
         <div class="row">
             <div class="col-6"></div>
-            <div class="col-6" id="searchForm">
+            <div class="col-6">
                 <p class="col-12 mb-1 mt-1 p-0" id="searchBar">Add an Animal</p>
-                <form action=addAnimal()>
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fas fa-search"></i>   Search</button>
-                  </form>
+                <form id="searchForm">
+                    <input type="text" placeholder="Search.." name="search" id="searchInput">
+                    <button type="submit"><i class="fas fa-search" id="searchBtn"></i>   Search</button>
+                </form>
             </div>
         </div>
-        <div class="col-4" id="animal-gifs-here"></div>
+        <div id="animal-gifs-here"></div>
     </div>
     
 </body>

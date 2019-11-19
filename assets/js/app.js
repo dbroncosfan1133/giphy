@@ -3,7 +3,7 @@ $(document).ready(function(){
 $("button").on("click", function() {
     var animal = $(this).attr("data-animal");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=oaZp0K8D3ldWH4MecTU20ZMKxIDIjy2d&limit=10";
+        animal + "&rating=PG&api_key=Q5CeRLTcc4mA4AROS0aoH0ydGDpEXgF9&limit=10";
 
 $.ajax({
     url: queryURL,
@@ -28,29 +28,33 @@ $.ajax({
 
             $("#animal-gifs-here").prepend(gifDiv);
 
-            }
+            };
+            $("body").on("click", ".gif", function() {
+                var state = $(this).attr("data-state");
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                }else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            
+            });
         })
+
     });
 
-$(".gif").on("click", function() {
-
-    console.log("clicked")
-    var state = $(this).attr("data-state");
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    }else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
-
+$("#searchForm").submit(function(e) {
+        e.preventDefault();
 });
 
+    $("#searchBtn").click(function() { 
+        var newBtn = $("<button>");
+        newBtn.attr("type", "button");
+        
 
+        newBtn.append(newBtn);
 
-
-
-
-
+});
 
 });
