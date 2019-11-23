@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+//Preselected dynamically create buttons and append to page    
 var topicBtns = ["Pulp Fiction", "Bart Simpson", "Futurama", "Rick Sanchez", "Mr Meeseeks"]
 for(var j = 0; j < topicBtns.length; j++) {
     var btnCreate = $("<button>" + topicBtns[j] + "</button>")
@@ -8,7 +9,7 @@ for(var j = 0; j < topicBtns.length; j++) {
         btnCreate.attr("data-topic", topicBtns[j]);
         btnCreate.appendTo("#buttonArray")
 }
-
+//Button click pulls 10 gifs associated with the button clicked
 $(document).on("click", ".myButtons", function() {
     var topic = $(this).attr("data-topic");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -20,7 +21,7 @@ $.ajax({
 })
     .then(function(response) {
         var results = response.data;
-
+//creates divs, p tags, and img tags also sets attributes of gifs on load
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
             var rating = results[i].rating;
@@ -38,12 +39,13 @@ $.ajax({
             $("#topic-gifs-here").prepend(gifDiv);
 
             };
+//toggles play or pause on the loaded gifs            
             $(document).on("click", ".gif", function() {
                 var state = $(this).attr("data-state");
                 if (state === "still") {
                     $(this).attr("src", $(this).attr("data-animate"));
                     $(this).attr("data-state", "animate");
-                }else {
+                } else {
                     $(this).attr("src", $(this).attr("data-still"));
                     $(this).attr("data-state", "still");
                 }
@@ -52,11 +54,11 @@ $.ajax({
         })
 
     });
-
+//Input form to allow users to add their own buttons
     $("#searchForm").on("click", function(e) {
         e.preventDefault();
     });
-
+//Submit user input and creates a new button on the page 
     $("#addTopic").on("click", function() {
 
         var newButton = $("<button>");
