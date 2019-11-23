@@ -40,7 +40,7 @@ $.ajax({
 
             };
 //toggles play or pause on the loaded gifs            
-            $(document).on("click", ".gif", function() {
+            $(".gif").on("click", function() {
                 var state = $(this).attr("data-state");
                 if (state === "still") {
                     $(this).attr("src", $(this).attr("data-animate"));
